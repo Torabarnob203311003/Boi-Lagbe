@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Book from './Book'; // Importing the Book component
 
 function Books() {
-    // Define the books data directly inside the file
     const booksData = [
         {
             "bookId": 1,
@@ -120,46 +120,24 @@ function Books() {
             "publisher": "Riverhead Books",
             "yearOfPublishing": 2015
         }
-    ]
+    ];
 
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        // Simulate a fetch operation
-        setTimeout(() => {
-            setBooks(booksData); // Set the books data after the "fetch" operation
-        }, 1000); // Simulate network delay
+        setBooks(booksData);
     }, []);
 
     return (
         <div className="mb-10 mx-auto">
             <h1 className="text-4xl font-bold text-center">Books</h1>
-            <p>Books Length: {books.length}</p>
-            <ul>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 mt-8">
                 {books.map((book) => (
-                    <li key={book.bookId}>
-                        <h2>{book.bookName}</h2>
-                        <p>Author: {book.author}</p>
-                        <p>Rating: {book.rating}</p>
-                        <img src={book.image} alt={book.bookName} width="100" />
-                    </li>
+                    <Book key={book.bookId} book={book} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
 
 export default Books;
-
-
-/** 
- * 1. state to store books 
- * 2. use effect
- * 3. fecth to load data 
- * 4. set the data to the state
- * 
-
-
-
-
-*/
