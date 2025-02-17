@@ -7,7 +7,7 @@ function Navbar() {
             <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
                 <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 mx-auto">
                     <a href="#" className="flex items-center">
-                        <span className="self-center text-2xl lg:text-4xl font-extrabold whitespace-nowrap dark:text-white">Boi Lagbe</span>
+                        <NavLink to="/" className="self-center text-2xl lg:text-4xl font-extrabold whitespace-nowrap dark:text-white">Boi Lagbe</NavLink>
                     </a>
                     <div className="flex items-center lg:order-2">
                         <a href=""
