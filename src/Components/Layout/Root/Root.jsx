@@ -1,10 +1,9 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
 
 function Root() {
   return (
-    <div> <h1>
-        
-        hi i am root</h1></div>
+    <div>  <Navbar/></div>
   )
 }
 
