@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Book({ book }) {
-    const { image, bookName, author, rating } = book; // Assuming "rating" is part of the book data
+    const { bookId, image, bookName, author, rating } = book; // Assuming "rating" is part of the book data
 
     const renderStars = (rating) => {
         const stars = [];
@@ -17,7 +17,7 @@ function Book({ book }) {
     };
 
     return (
-       <Link>
+        <Link to= {`/books/${bookId}`}>
             <div className="card bg-base-100 w-full shadow-xl mx-auto mt-5 lg:mt-10 md:mt-8">
                 <figure>
                     <img
