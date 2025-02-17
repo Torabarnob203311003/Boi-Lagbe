@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const booksData = [
@@ -119,11 +119,30 @@ const booksData = [
         "publisher": "Riverhead Books",
         "yearOfPublishing": 2015
     }
+
 ];
 
 function BookDetails() {
     const { bookId } = useParams();
     const book = booksData.find(b => b.bookId === parseInt(bookId, 10));
+
+    const addToWishlist = () => {
+        const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const bookInWishlist = storedWishlist.find(b => b.bookId === book.bookId);
+
+        if (!bookInWishlist) {
+            storedWishlist.push({
+                bookId: book.bookId,
+                bookName: book.bookName,
+                image: book.image
+            });
+            localStorage.setItem('wishlist', JSON.stringify(storedWishlist));
+        }
+    };
+
+
+    // State to manage wishlist
+    const [wishlist, setWishlist] = useState([]);
 
     if (!book) {
         return <div className="text-center text-red-500 font-bold text-xl mt-10">Book not found!</div>;
@@ -133,6 +152,13 @@ function BookDetails() {
         return [...Array(5)].map((_, i) => (
             <span key={i} className={i < rating ? "text-yellow-500" : "text-gray-400"}>★</span>
         ));
+    };
+
+    const handleWishlist = () => {
+        // Add the book to the wishlist
+        const newWishlist = [...wishlist, { name: book.bookName, image: book.image }];
+        setWishlist(newWishlist);
+        console.log('Added to wishlist:', newWishlist); // You can also handle saving the wishlist to localStorage or a server
     };
 
     return (
@@ -163,7 +189,7 @@ function BookDetails() {
                     </div>
 
                     {/* Book Info */}
-                    <div className="grid  gap-4 mt-4">
+                    <div className="grid gap-4 mt-4">
                         <p><span className="font-semibold">Pages:</span> {book.totalPages}</p>
                         <p><span className="font-semibold">Publisher:</span> {book.publisher}</p>
                         <p><span className="font-semibold">Year:</span> {book.yearOfPublishing}</p>
@@ -172,8 +198,8 @@ function BookDetails() {
 
                     {/* Buttons */}
                     <div className="mt-6 flex space-x-4">
-                        <button className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition">Read</button>
-                        <button className="bg-cyan-400 text-gray-800 px-4 py-2 rounded-lg hover:bg-blue-600 transition">Wishlist</button>
+                        <button className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-blue-700 transition">Read</button>
+                        <button onClick={addToWishlist} className="bg-cyan-500 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition">Wishlist</button>
                     </div>
                 </div>
             </div>

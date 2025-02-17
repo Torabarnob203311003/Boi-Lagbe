@@ -8,6 +8,7 @@ import ErrorPage from './Components/Layout/ErrorPage/ErrorPage';
 import Home from './Components/Layout/Home/Home';
 import DashBoard from './Components/Layout/DashBoard/DashBoard';
 import BookDetails from './Components/Layout/Books/BookDetails';
+import ListedBooks from './Components/Layout/Books/ListedBooks';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
 
         path : 'books/:bookId',
         element : <BookDetails/>
+      },
+      {
+
+        path : 'listedBooks',
+        element : <ListedBooks/>
       },
       {
 
