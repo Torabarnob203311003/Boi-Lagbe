@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -37,9 +38,9 @@ function Navbar() {
               <div class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                   <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                       <li>
-                          <a href="#"
-                              class="block py-2 pl-3 pr-4 text-gray-400 bg-green-700  lg:bg-transparent lg:text-emerald-500 border border-green-500 rounded-lg p-4 lg:px-3 dark:text-white"
-                              aria-current="page">Home</a>
+                          <NavLink  to="/"
+                              className="block py-2 pl-3 pr-4 text-gray-400 bg-green-700  lg:bg-transparent lg:text-emerald-500 border border-green-500 rounded-lg p-4 lg:px-3 dark:text-white"
+                              aria-current="page">Home</NavLink>
                       </li>
                       <li>
                           <a href="#"

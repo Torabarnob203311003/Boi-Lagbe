@@ -5,7 +5,8 @@ import Navbar from '../Navbar/Navbar'
 
 function Root() {
   return (
-    <div>   <Navbar/>
+      <div className='max-w-[1970px]
+       mx-auto'>   <Navbar/>
             <Outlet/>
             <Footer/>
     </div>
