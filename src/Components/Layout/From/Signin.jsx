@@ -8,14 +8,14 @@ export default function SignIn() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        // Get stored email and password from localStorage
         const storedEmail = localStorage.getItem('userEmail');
         const storedPassword = localStorage.getItem('userPassword');
 
-        // Check if entered credentials match the stored ones
         if (data.Email === storedEmail && data.Password === storedPassword) {
             console.log("Successfully signed in");
-            navigate("/"); // Navigate to the root page after successful sign-in
+            localStorage.setItem('isAuthenticated', 'true'); // Store authentication status
+            navigate("/");
+            window.location.reload(); // Refresh to update Navbar
         } else {
             console.log("Invalid email or password");
         }
