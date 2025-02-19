@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa'; // Import user profile icon
 
 function Navbar() {
@@ -14,13 +14,21 @@ function Navbar() {
         <div className='lg:mt-7 md:mt-7 mt-5'>
             <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
                 <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 mx-auto">
-                    <NavLink to="/" className="self-center text-2xl lg:text-4xl font-extrabold whitespace-nowrap dark:text-white">Boi Lagbe</NavLink>
+                    <NavLink to="/" className="self-center text-2xl lg:text-4xl font-extrabold whitespace-nowrap dark:text-white">
+                        Boi Lagbe
+                    </NavLink>
 
                     <div className="flex items-center lg:order-2">
                         {isAuthenticated ? (
                             <>
                                 {/* Profile Icon */}
-                                <NavLink to="/" className="text-gray-500 hover:text-green-600 text-3xl mr-4">
+                                <NavLink
+                                    to="/"
+                                    className=
+                                            
+                                             "text-gray-500 hover:text-green-600 text-3xl mr-4"
+                                    
+                                >
                                     <FaUserCircle size={35} />
                                 </NavLink>
 
@@ -48,9 +56,42 @@ function Navbar() {
                     {/* Navigation Menu */}
                     <div className="items-center justify-between w-full lg:flex lg:w-auto lg:order-1">
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                            <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-                            <li><NavLink to="/listedBooks" className="nav-link">Listed Books</NavLink></li>
-                            <li><NavLink to="/readbooks" className="nav-link">Page to Read</NavLink></li>
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "border border-green-500 text-gray-500 px-3 py-2 rounded-lg"
+                                            : "text-gray-500 hover:text-green-600"
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/listedBooks"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "border border-green-500 text-gray-500 px-3 py-2 rounded-lg"
+                                            : "text-gray-500 hover:text-green-600"
+                                    }
+                                >
+                                    Listed Books
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/readbooks"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "border border-green-500 text-gray-500 px-3 py-2 rounded-lg"
+                                            : "text-gray-500 hover:text-green-600"
+                                    }
+                                >
+                                    Page to Read
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
