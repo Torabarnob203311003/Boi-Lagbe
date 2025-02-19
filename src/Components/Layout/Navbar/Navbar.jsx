@@ -20,7 +20,7 @@ function Navbar() {
                         {isAuthenticated ? (
                             <>
                                 {/* Profile Icon */}
-                                <NavLink to="/profile" className="text-gray-500 hover:text-green-600 text-3xl mr-4">
+                                <NavLink to="/" className="text-gray-500 hover:text-green-600 text-3xl mr-4">
                                     <FaUserCircle size={35} />
                                 </NavLink>
 
