@@ -36,8 +36,11 @@ function Navbar() {
                                 >Listed Books</NavLink>
                             </li>
                             <li>
-                                <a href="#"
-                                    className="block py-2 pl-3 pr-4 text-gray-400 lg:bg-transparent lg:text-slate-500 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Page to Read</a>
+                                <NavLink to="/readbooks"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "block py-2 pl-3 pr-4 text-gray-400 bg-green-700 lg:bg-transparent lg:text-emerald-500 border border-green-500 rounded-lg p-4 lg:px-3 dark:text-white"
+                                            : "block py-2 pl-3 pr-4 text-gray-400 lg:bg-transparent lg:text-slate-500 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"}>Page to Read</NavLink>
                             </li>
                         </ul>
                     </div>

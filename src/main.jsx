@@ -12,6 +12,7 @@ import ListedBooks from './Components/Layout/Books/ListedBooks';
 import Signin from './Components/Layout/From/Signin';
 import Login from './Components/Layout/From/SignUp';
 import Signup from './Components/Layout/From/SignUp';
+import ReadBooks from './Components/Layout/Books/ReadBooks';
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "books/:bookId", element: <BookDetails /> },
       { path: "listedBooks", element: <ListedBooks /> },
-      { path: "dashboard", element: <DashBoard /> },
+      { path: "readbooks", element: <ReadBooks/> },
      
     ],
     
