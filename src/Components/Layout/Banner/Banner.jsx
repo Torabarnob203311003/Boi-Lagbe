@@ -7,7 +7,7 @@ function Banner() {
                 {/* Increased min-h for larger height */}
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img
-                        src="/src/books.jpg"
+                        src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt="books"
                         className="  rounded-lg shadow-2xl  lg:ml-20"
                     />

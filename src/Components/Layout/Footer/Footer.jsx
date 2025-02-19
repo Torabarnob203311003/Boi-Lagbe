@@ -5,17 +5,17 @@ function Footer() {
    <footer className="footer bg-base-200 text-base-content p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <a className="link link-hover">Online Books</a>
+    <a className="link link-hover">Free Home Delivery</a>
+    <a className="link link-hover">Rent Books</a>
+    <a className="link link-hover">Sell Books</a>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <a className="link link-hover">Oportunity</a>
+    <a className="link link-hover"> Writer</a>
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>
@@ -24,7 +24,7 @@ function Footer() {
     <a className="link link-hover">Cookie policy</a>
   </nav>
   <form>
-    <h6 className="footer-title">Newsletter</h6>
+    <h6 className="footer-title">Contact Us</h6>
     <fieldset className="form-control w-80">
       <label className="label">
         <span className="label-text">Enter your email address</span>
