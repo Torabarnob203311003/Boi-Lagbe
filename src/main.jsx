@@ -24,14 +24,14 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "books/:bookId", element: <BookDetails /> },
       { path: "listedBooks", element: <ListedBooks /> },
-      { path: "readbooks", element: <ReadBooks/> },
-     
+      { path: "readbooks", element: <ReadBooks /> },
+
     ],
-    
+
   },
 
   { path: "signin", element: <Signin /> }, //
-  { path: "signup", element: <Signup/> }, // ✅
+  { path: "signup", element: <Signup /> }, // ✅
 ]);
 
 createRoot(document.getElementById('root')).render(
